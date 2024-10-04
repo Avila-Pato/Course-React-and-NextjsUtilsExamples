@@ -1,0 +1,79 @@
+/* Estilos generales */
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background-color: #f0f0f0; /* Fondo claro para mejor contraste */
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px; /* Espaciado en el nav */
+  background-color: #282c34; /* Fondo oscuro para el nav */
+  color: white; /* Color de texto blanco */
+  position: relative; /* Para el posicionamiento de los elementos */
+}
+
+.menu-icon {
+  display: none; /* Ocultar en pantallas grandes */
+  cursor: pointer;
+  font-size: 28px; /* Aumentar tamaño del icono */
+  color: #61dafb; /* Color azul del icono */
+}
+
+.nav-links {
+  display: flex;
+  gap: 20px; /* Espaciado entre enlaces */
+}
+
+nav a {
+  color: #61dafb; /* Color de enlaces */
+  text-decoration: none; /* Quitar subrayado */
+  font-weight: bold; /* Negrita en enlaces */
+  transition: color 0.3s; /* Efecto suave en hover */
+}
+
+nav a:hover {
+  color: #21a1f1; /* Color al pasar el mouse */
+}
+
+/* Estilos del menú desplegable */
+.nav-links.open {
+  display: flex;
+  flex-direction: column; /* Cambiar a columna para el menú desplegable */
+  position: absolute; /* Posicionar el menú */
+  top: 60px; /* Ajustar según sea necesario */
+  left: 0; /* Alinear a la izquierda */
+  background-color: #282c34; /* Color de fondo del menú */
+  padding: 10px; /* Espaciado del menú */
+  border-radius: 5px; /* Bordes redondeados */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra para profundidad */
+  z-index: 10; /* Asegurarse de que se muestre sobre otros elementos */
+}
+
+@media (max-width: 768px) {
+  .menu-icon {
+    display: block; /* Mostrar el ícono de menú en pantallas pequeñas */
+  }
+
+  .nav-links {
+    display: none; /* Ocultar los enlaces por defecto */
+  }
+
+  .nav-links.open {
+    display: flex; /* Mostrar los enlaces cuando el menú está abierto */
+  }
+}
+
+/* Estilos de responsividad */
+@media (max-width: 768px) {
+  nav {
+    flex-direction: column; /* Cambiar a columna en pantallas pequeñas */
+    align-items: flex-start; /* Alinear elementos a la izquierda */
+  }
+
+  .nav-links {
+    width: 100%; /* Hacer que el menú ocupe todo el ancho */
+  }
+}
